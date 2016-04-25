@@ -53,7 +53,9 @@ public class MySQLDatabaseAdaptor extends DatabaseAdaptor {
 	public Connection getConnection(String urlSpec, String user, String password)
 			throws DatabaseException {
 		try {
-			return DriverManager.getConnection(urlSpec, user, password);
+			Connection connect = DriverManager.getConnection(urlSpec, user, password);
+			if ( connect != null ) connect.setAutoCommit( false );
+			return connect;
 		}
 		catch(SQLException exception) {
 			Logger.getLogger("global").log( Level.SEVERE, "Error connecting to the database at URL: \"" + urlSpec + "\" as user: " + user , exception );
