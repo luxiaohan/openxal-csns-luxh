@@ -87,7 +87,6 @@ class PersistentStore {
 	static public Connection connectionInstance( final ConnectionDictionary dictionary ) throws SQLException {
 		final DatabaseAdaptor databaseAdaptor = dictionary.getDatabaseAdaptor();
 		final Connection connection = databaseAdaptor.getConnection( dictionary );
-		connection.setAutoCommit( false );
 		
 		return connection;
 	}
