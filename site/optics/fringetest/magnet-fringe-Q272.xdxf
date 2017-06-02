@@ -113,6 +113,9 @@
           <magnet frFldIntK0="0" frFldIntK1="0" />
        </attributes>
     </node>
+    </sequence>
+    
+    <sequence  id="RCS_Ext1">
     <node type="QFH" id="RCS_Mag:R2QF03">
        <attributes>
           <magnet frFldIntK0="0" frFldIntK1="0" />

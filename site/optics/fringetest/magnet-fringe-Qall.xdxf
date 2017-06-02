@@ -113,12 +113,15 @@
           <magnet frFldIntK0="-0.0000655943" frFldIntK1="-0.00293224" />
        </attributes>
     </node>
+    </sequence>
+    
+    <sequence  id="RCS_Ext1">
     <node type="QFH" id="RCS_Mag:R2QF03">
        <attributes>
           <magnet frFldIntK0="-0.000321847" frFldIntK1="-0.00376606" />
        </attributes>
     </node>
-        <node type="QFV" id="RCS_Mag:R2QD02">
+    <node type="QFV" id="RCS_Mag:R2QD02">
        <attributes>
           <magnet frFldIntK0="-0.000341201" frFldIntK1="0.00508162" />
        </attributes>
