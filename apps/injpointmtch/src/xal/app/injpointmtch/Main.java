@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 
+import xal.extension.application.Application;
 import xal.extension.application.ApplicationAdaptor;
 import xal.extension.application.XalDocument;
 import xal.extension.application.smf.AcceleratorApplication;
@@ -91,7 +92,7 @@ public class Main extends ApplicationAdaptor {
 		try {
 			System.out.println("Launching Injection Point Match application...");
 			Logger.getLogger("global").log(Level.INFO, "Launching the application...");
-			AcceleratorApplication.launch(new Main());
+			Application.launch(new Main());
 		} catch (Exception exception) {
 			System.err.println(exception.getMessage());
 			Logger.getLogger("global").log(Level.SEVERE, "Error launching the application.", exception);

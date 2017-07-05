@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <BricksDocument date="Wed Apr 05 14:36:18 CST 2017" version="1.0.0">
     <RootBrick>
-        <ViewNode customBeanClass="xal.extension.application.smf.DefaultAcceleratorWindow" height="900" tag="MainWindow" width="1287">
+        <ViewNode customBeanClass="xal.extension.application.DefaultXalWindow" height="900" tag="MainWindow" width="1287">
             <ViewProxy type="javax.swing.JFrame"/>
             <BeanProperty name="title" value="Injection Point Match"/>
             <ViewNode tag="MainView">

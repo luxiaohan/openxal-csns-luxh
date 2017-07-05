@@ -14,10 +14,14 @@
  */
 package xal.app.injpointmtch;
 
+import java.awt.event.ActionEvent;
 import java.net.URL;
 
+import javax.swing.AbstractAction;
+
+import xal.extension.application.Commander;
+import xal.extension.application.XalDocument;
 import xal.extension.application.XalWindow;
-import xal.extension.application.smf.AcceleratorDocument;
 import xal.extension.bricks.WindowReference;
 import xal.tools.data.DataAdaptor;
 import xal.tools.data.DataListener;
@@ -29,7 +33,7 @@ import xal.tools.xml.XmlDataAdaptor;
  * @version Mar 28, 2017,v 1.0
  * @sine JDK 1.8
  */
-public class InjMatchDocument extends AcceleratorDocument implements DataListener {
+public class InjMatchDocument extends XalDocument implements DataListener {
 
 	/** main window reference */
 	final private WindowReference WINDOW_REFERENCE;
@@ -72,6 +76,37 @@ public class InjMatchDocument extends AcceleratorDocument implements DataListene
 	/** get the model */
 	public InjMatchModel getModel() {
 		return MODEL;
+	}
+	
+	
+	/**
+	 * Register custom actions for the commands of this application
+	 * @param commander  The commander with which to register the custom commands.
+	 */
+	public void customizeCommands( Commander commander ) {
+		//load default accelerator
+		final AbstractAction loadDefault = new AbstractAction( "load-default" ) {
+			private static final long serialVersionUID = 1L;
+
+			public void actionPerformed(ActionEvent e) {
+				setHasChanges( true );
+System.out.println("I'm here");				
+			}
+		};
+		
+		commander.registerAction( loadDefault );
+		
+		//load default accelerator
+		final AbstractAction loadSelected = new AbstractAction( "load-selected" ) {
+			private static final long serialVersionUID = 1L;
+
+			public void actionPerformed(ActionEvent e) {
+				setHasChanges( true );
+System.out.println("I'm ok");				
+			}
+		};
+		
+		commander.registerAction( loadSelected );
 	}
 
 	/*
